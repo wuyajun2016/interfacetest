@@ -1,0 +1,78 @@
+
+
+扫码
+10.1.133.212 - - [06/Oct/2016:10:02:42 +0800] "GET http://api.l.whereask.com/s/99927792/B2/460195d19560df8b91cabd05f65e9407 HTTP/1.1" 302 0 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/6.3.13 NetType/WIFI Language/zh_CN"
+10.1.133.212 - - [06/Oct/2016:10:02:42 +0800] "GET http://api.l.whereask.com/oauth/callback?key=wechat:auth:param:a0736979cffe4c2582d1ca7e16adc473&rdt=1475719362420&_ot=base&code=041Mxd7x0A8B0n1zAr4x0gGg7x0Mxd7a&state=1475719362421 HTTP/1.1" 302 0 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/6.3.13 NetType/WIFI Language/zh_CN"
+
+"GET http://api.l.whereask.com/shop/v1/get_state?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475719369096&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 564 "
+GET http://api.l.whereask.com/shop/v1/99927792/share?xtoken=54452c7d6322ff78056424b22666bd1b HTTP/1.1" 200 553 
+
+
+
+点击进入
+"POST http://api.l.whereask.com/carts/v1/create?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720209151&g_entityId=99927792 HTTP/1.1" 200
+"GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720210336&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 230 
+"GET http://api.l.whereask.com/privilege/v1/title?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720210341&g_entityId=99927792&entity_id=99927792 HTTP/1.1" 200 52 
+"GET http://api.l.whereask.com/menus/v1/list?repeat=false&xtoken=54452c7d6322ff78056424b22666bd1b&g_entityId=99927792&entity_id=99927792 HTTP/1.1" 200 927
+
+下述请求每隔10s定时出现（选择的人数进行请求是在触发 “点菜” 动作后开始进行）
+"GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720320669&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 230
+
+
+选择人数并点菜
+A 进入界面
+POST http://api.l.whereask.com/carts/v1/modify_people_memo?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720838904&g_entityId=99927792
+POST http://api.l.whereask.com/carts/v1/force_menu?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720839028&g_entityId=99927792 HTTP/1.1" 200 43 
+
+GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720839032&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 230
+GET http://api.l.whereask.com/menus/v1/get_recommend_menus?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475720839133&g_entityId=99927792&recommend=a&entity_id=99927792&seat_code=B2&order_id=&page=1&page_size=12&is_pre_cart=false HTTP/1.1" 200 33
+
+B 选择其中一种菜
+GET http://api.l.whereask.com/menus/v1/get_menu_spec/99927792/999277925600e4a301562626dc790272/?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721251547&g_entityId=99927792 HTTP/1.1" 200 128 
+（下述请求每10s巡回）
+GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721251698&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 230
+
+
+C 加入购物车
+（巡回请求）
+GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721392119&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 674 
+
+D 点击购物车出现下单界面
+GET http://api.l.whereask.com/carts/v1/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721480584&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 674 
+GET http://api.l.whereask.com/privilege/v1/cart/list?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721480785&g_entityId=99927792&entity_id=99927792&menu_id_list=999277925600e4a301562626dc790272 HTTP/1.1" 200 96
+
+GET http://api.l.whereask.com/menus/v1/get_recommend_menus?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721480799&g_entityId=99927792&recommend=a&entity_id=99927792&seat_code=B2&order_id=&page=1&page_size=12&is_pre_cart=false HTTP/1.1" 200 33
+GET http://api.l.whereask.com/menus/v1/get_recommend_menus?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721481582&g_entityId=99927792&recommend=a&entity_id=99927792&seat_code=B2&order_id=&page=1&page_size=12&is_pre_cart=false HTTP/1.1" 200 33
+
+POST http://api.l.whereask.com/orders/v1/confirm_check?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721500755&g_entityId=99927792 HTTP/1.1" 200 45
+
+ [06/Oct/2016:10:38:16 +0800] "CONNECT 10.1.5.114:9003 H
+ POST http://api.l.whereask.com/orders/v1/confirm_check?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721520759&g_entityId=99927792 HTTP/1.1" 200 45
+ [06/Oct/2016:10:38:39 +0800] "CONNECT 10.1.5.114:9003 H
+ POST http://api.l.whereask.com/orders/v1/confirm_check?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721540763&g_entityId=99927792 HTTP/1.1" 200 45 "
+ 
+E 下单
+[06/Oct/2016:10:38:16 +0800] "CONNECT 10.1.5.114:9003 H
+ POST http://api.l.whereask.com/orders/v1/confirm_check?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721520759&g_entityId=99927792 HTTP/1.1" 200 45
+ [06/Oct/2016:10:38:39 +0800] "CONNECT 10.1.5.114:9003 H
+ POST http://api.l.whereask.com/orders/v1/confirm_check?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721540763&g_entityId=99927792 HTTP/1.1" 200 45 "
+ 
+F 下一步
+POST http://api.l.whereask.com/orders/v1/confirm?entity_id=99927792&seat_code=B2&order_id=&people_count=3&memo=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721896984&g_entityId=99927792 HTTP/1.1" 200 22
+
+GET http://api.l.whereask.com/orders/v1/get_order?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721903089&g_entityId=99927792&entity_id=99927792&seat_code=B2&order_id= HTTP/1.1" 200 684 
+
+（下述请求巡回10s）
+POST http://api.l.whereask.com/orders/v1/check_order_change?entity_id=99927792&seat_code=B2&order_id=&xtoken=54452c7d6322ff78056424b22666bd1b&t=1475721903331&g_entityId=99927792 HTTP/1.1" 200 22 
+
+
+
+
+
+"127.0.0.1" "-" "[30/Sep/2016:15:05:51 +0800]" "GET /s/99927792/B2/460195d19560df8b91cab     d05f65e9407 HTTP/1.0" "302" "0" "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1;      Trident/5.0)" "GET http://api.l.whereask.com/s/99927792/B2/460195d19560df8b91cabd05f65e9     407" "api.l.whereask.com" "-" "0.019" "50977" "0.018" "-" "/s/99927792/B2/460195d19560df     8b91cabd05f65e9407" "302" "10.1.6.167:80"
+2350 "127.0.0.1" "-" "[30/Sep/2016:15:05:51 +0800]" "GET /daily/page/error-info.html?message=     %E8%AF%B7%E4%BD%BF%E7%94%A8%E6%94%AF%E4%BB%98%E5%AE%9D%E6%88%96%E5%BE%AE%E4%BF%A1%E6%89%     AB%E7%A0%81&t=1475219151184 HTTP/1.0" "200" "1211" "http://api.l.whereask.com/s/99927792     /B2/460195d19560df8b91cabd05f65e9407" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1     ; Trident/5.0)" "GET http://api.l.whereask.com/daily/page/error-info.html?message=%E8%AF     %B7%E4%BD%BF%E7%94%A8%E6%94%AF%E4%BB%98%E5%AE%9D%E6%88%96%E5%BE%AE%E4%BF%A1%E6%89%AB%E7%     A0%81&t=1475219151184" "api.l.whereask.com" "-" "0.002" "50980" "0.001" "-" "/daily/page     /error-info.html" "200" "10.1.6.180:80"
+
+选择某一个菜样
+"127.0.0.1" "-" "[30/Sep/2016:15:12:10 +0800]" "GET /menus/v1/get_menu_spec/99927792/999     277925600e4a301562626dc790272/?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475219532843&g     _entityId=99927792 HTTP/1.0" "200" "117" "http://api.l.whereask.com/daily/page/menulist.     html?t=1475160965006" "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit     /600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/6.3.13 NetType/WIFI Language/z     h_CN" "GET http://api.l.whereask.com/menus/v1/get_menu_spec/99927792/999277925600e4a3015     62626dc790272/?xtoken=54452c7d6322ff78056424b22666bd1b&t=1475219532843&g_entityId=999277     92" "api.l.whereask.com" "-" "0.061" "52381" "0.061" "-" "/menus/v1/get_menu_spec/999277     92/999277925600e4a301562626dc790272/" "200" "10.1.5.184:80"
+
+

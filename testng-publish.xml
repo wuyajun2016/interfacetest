@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" verbose="1">
+	
+	<test name="api">
+	    <groups>
+    		<run>
+             <include name="smoke" />
+    		</run>
+ 	    </groups> 	    
+		<classes>
+			<class name="com.dfire.qa.meal.api.QRCodeTestController"/>	
+			<class name="com.dfire.qa.meal.api.MenuTestController"/>
+			<class name="com.dfire.qa.meal.api.CartTestController" />	
+			<class name="com.dfire.qa.meal.api.PayTestController" />
+			<class name="com.dfire.qa.meal.api.BossTestController" />						
+		</classes>
+	</test> 
+	
+	<test name="module">
+	    <groups>
+	   		<run>
+	            <include name="smoke" />
+	   		</run>
+		    </groups> 	    
+		<classes>
+			<class name="com.dfire.qa.meal.module.OAuthTestModule" />	
+			<class name="com.dfire.qa.meal.module.MenuTestModule" />
+			<class name="com.dfire.qa.meal.module.CartTestModule" />
+			<class name="com.dfire.qa.meal.module.OrderTestModule" />	
+			<class name="com.dfire.qa.meal.module.ShopInfoTestModule" />					
+		</classes>
+	</test> 
+
+	
+	
+	
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="org.testng.reporters.FailedReporter" />
+	</listeners>
+</suite>

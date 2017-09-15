@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bean头部 -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
+    
+    
+    <!-- 主机地址,端口等配置  -->
+    <bean id="hostProperties" class="com.dfire.qa.meal.props.HostProperties">
+    
+    	<property name="env" value="${currentEnv}"/>
+    	
+        <property name="dailyHostParaMap" >
+        		   <map>
+        		  		<entry  key="serverURL"  value="${serverURLDaily}"/>
+        		  		<entry  key="bossURL"  value="${bossURLDaily}"/>
+        		  		<entry  key="cashURL"  value="${cashURLDaily}"/>
+        		  		<entry  key="cashHeartURL"  value="${cashHeartURLDaily}"/>
+        		  </map>
+        </property>
+        
+         <property name="devHostParaMap" >
+        		   <map>
+        		  		<entry  key="serverURL"  value="${serverURLDev}"/>
+        		  		<entry  key="bossURL"  value="${bossURLDev}"/>
+        		  		<entry  key="cashURL"  value="${cashURLDev}"/>
+        		  		<entry  key="cashHeartURL"  value="${cashHeartURLDev}"/>
+        		  </map>
+        </property>
+        
+        
+         <property name="preHostParaMap" >
+        		   <map>
+        		  		<entry  key="serverURL"  value="${serverURLPre}"/>
+        		  		<entry  key="bossURL"  value="${bossURLPre}"/>
+        		  		<entry  key="cashURL"  value="${cashURLPre}"/>
+        		  		<entry  key="cashHeartURL"  value="${cashHeartURLPre}"/>
+        		  </map>
+        </property>
+        
+        
+        <property name="publishHostParaMap" >
+        		   <map>
+        		  		<entry  key="serverURL"  value="${serverURLPublish}"/>
+        		  		<entry  key="bossURL"  value="${bossURLPublish}"/>
+        		  		<entry  key="cashURL"  value="${cashURLPublish}"/>
+        		  		<entry  key="cashHeartURL"  value="${cashHeartURLPublish}"/>
+        		  </map>
+        </property>
+        
+    </bean>
+
+
+
+    <!-- 认证相关配置  -->
+    <bean id="authProperties" class="com.dfire.qa.meal.props.AuthProperties">
+        
+        <property name="env" value="${currentEnv}"/>
+        
+        <property name="dailyAuthParaMap" >
+        		  <map>
+        		  		<entry  key="${entityIdForWJDaily}"  value="${unionIDForWJDaily}"/>
+        		  		<entry  key="uid" value="${uidForWJDaily}"/>
+        		  		
+        		  </map>
+        </property>
+        
+         <property name="devAuthParaMap" >
+        		  <map>
+        		  		<entry  key="${entityIdForWJDev}"  value="${unionIDForWJDev}"/>
+        		  		<entry  key="uid" value="${uidForWJDev}"/>
+        		  </map>
+        </property>
+        
+        
+        <property name="preAuthParaMap" >
+        		  <map>
+        		  		<entry  key="${entityIdForWJPre}"  value="${unionIDForWJPre}"/>
+        		  		<entry  key="uid" value="${uidForWJPre}"/>
+        		  </map>
+        </property>
+        
+        
+        <property name="publishAuthParaMap" >
+        		  <map>
+        		  		<entry  key="${entityIdForWJPublish}"  value="${unionIDForWJPublish}"/>
+        		  		<entry  key="uid" value="${uidForWJPublish}"/>
+        		  </map>
+        </property>
+        
+    </bean>
+    
+    
+     <!-- 店铺相关配置 -->
+    <bean id="shopProperties" class="com.dfire.qa.meal.props.ShopProperties">
+        
+        <property name="env" value="${currentEnv}"/>
+        
+        <property name="dailyShopParaMap" >
+        		  <map>
+        		  		<entry  key="shopName"  value="${shopNameDaily}"/>
+        		  		<entry  key="shopId"  value="${shopIdDaily}"/>
+        		  		<entry  key="seatName"  value="${seatNameDaily}"/>
+        		  		<entry  key="seatId"  value="${seatIdDaily}"/>
+        		  		
+        		  		<entry  key="seatCodeForWJ"  value="${seatCodeForWJDaily}"/>
+        		  		<entry  key="entityIdForWJ"  value="${entityIdForWJDaily}"/>
+        		  		<entry  key="seatCodeForBuss"  value="${seatCodeForBussDaily}"/>
+        		  		
+        		  </map>
+        </property>
+        
+        <property name="devShopParaMap" >
+        		  <map>
+        		  		<entry  key="shopName"  value="${shopNameDev}"/>
+        		  		<entry  key="shopId"  value="${shopIdDev}"/>
+        		  		<entry  key="seatName"  value="${seatNameDev}"/>
+        		  		<entry  key="seatId"  value="${seatIdDev}"/>
+        		  		
+        		  		<entry  key="seatCodeForWJ"  value="${seatCodeForWJDev}"/>
+        		  		<entry  key="entityIdForWJ"  value="${entityIdForWJDev}"/>
+        		  		<entry  key="seatCodeForBuss"  value="${seatCodeForBussDev}"/>
+        		  		
+        		  </map>
+        </property>
+        
+        <property name="preShopParaMap" >
+        		  <map>
+        		  		<entry  key="shopName"  value="${shopNamePre}"/>
+        		  		<entry  key="shopId"  value="${shopIdPre}"/>
+        		  		<entry  key="seatName"  value="${seatNamePre}"/>
+        		  		<entry  key="seatId"  value="${seatIdPre}"/>
+        		  		
+        		  		<entry  key="seatCodeForWJ"  value="${seatCodeForWJPre}"/>
+        		  		<entry  key="entityIdForWJ"  value="${entityIdForWJPre}"/>
+        		  		<entry  key="seatCodeForBuss"  value="${seatCodeForBussPre}"/>
+        		  		
+        		  </map>
+        </property>
+        
+        
+        <property name="publishShopParaMap" >
+        		   <map>
+        		  		<entry  key="shopName"  value="${shopNamePublish}"/>
+        		  		<entry  key="shopId"  value="${shopIdPublish}"/>
+        		  		<entry  key="seatName"  value="${seatNamePublish}"/>
+        		  		<entry  key="seatId"  value="${seatIdPublish}"/>
+        		  		
+        		  		<entry  key="seatCodeForWJ"  value="${seatCodeForWJPublish}"/>
+        		  		<entry  key="entityIdForWJ"  value="${entityIdForWJPublish}"/>
+        		  		<entry  key="seatCodeForBuss"  value="${seatCodeForBussPublish}"/>
+        		  		
+        		  </map>
+        </property>
+    </bean>
+
+
+
+    <!-- 掌柜端相关配置 -->
+    <bean id="bossProperties" class="com.dfire.qa.meal.props.BossProperties">
+    
+   		 <property name="env" value="${currentEnv}"/>
+   		 
+         <property name="bossParaMap" >
+        		  <map>  		  		
+        		  		<!-- 掌柜端基础设置 -->
+        		  		<entry  key="appKey"  value="${bossAppKey}"/>
+        		  		<entry  key="appVersion"  value="${bossAppVersion}"/>
+        		  		
+        		  		<entry  key="deviceId"  value="${bossDeviceId}"/>
+        		  		<entry  key="format"  value="${bossFormat}"/>
+        		  		
+        		  		<entry  key="sessionKey"  value="${bossSessionKey}"/>
+        		  		<entry  key="secret"  value="${bossSecret}"/>
+        		  		
+        		  		<!-- 掌柜端 HTTP header 配置 -->
+        		  		<entry  key="version"  value="${bossVersion}"/>
+        		  		
+        		  		<entry  key="sessionId"  value="${bossSessionId}"/>
+        		  		<entry  key="isTest"  value="${bossIsTest}"/>
+        		  		
+        		  </map>
+        </property>
+        
+         <property name="dailyBossConfigMap" >
+        		  <map>
+        		  		<entry  key="prePayConfigForSeatCode"  value="${prePayConfigForSeatCodeDaily}"/>
+        		  		<entry  key="prePayConfigForShop"  value="${prePayConfigForShopDaily}"/>
+        		  		
+        		  		<entry  key="menuIdForBoss"  value="${menuIdForBossDaily}"/>
+        		  		<entry  key="kindMenuIdForBoss"  value="${kindMenuIdForBossDaily}"/>
+        		  </map>
+        </property>
+        
+        <property name="devBossConfigMap" >
+        		  <map>
+        		  		<entry  key="prePayConfigForSeatCode"  value="${prePayConfigForSeatCodeDev}"/>
+        		  		<entry  key="prePayConfigForShop"  value="${prePayConfigForShopDev}"/>
+        		  		
+        		  		<entry  key="menuIdForBoss"  value="${menuIdForBossDev}"/>
+        		  		<entry  key="kindMenuIdForBoss"  value="${kindMenuIdForBossDev}"/>
+        		  </map>
+        </property>
+        
+         <property name="preBossConfigMap" >
+        		  <map>
+        		  		<entry  key="prePayConfigForSeatCode"  value="${prePayConfigForSeatCodePre}"/>
+        		  		<entry  key="prePayConfigForShop"  value="${prePayConfigForShopPre}"/>
+        		  		
+        		  		<entry  key="menuIdForBoss"  value="${menuIdForBossPre}"/>
+        		  		<entry  key="kindMenuIdForBoss"  value="${kindMenuIdForBossPre}"/>
+        		  </map>
+        </property>
+        
+         <property name="publishBossConfigMap" >
+        		  <map>
+        		  		<entry  key="prePayConfigForSeatCode"  value="${prePayConfigForSeatCodePublish}"/>
+        		  		<entry  key="prePayConfigForShop"  value="${prePayConfigForShopPublish}"/>
+        		  		
+        		  		<entry  key="menuIdForBoss"  value="${menuIdForBossPublish}"/>
+        		  		<entry  key="kindMenuIdForBoss"  value="${kindMenuIdForBossPublish}"/>
+        		  </map>
+        </property>
+        
+    </bean>
+    
+    
+
+    <!-- 收银端相关配置 -->
+    <bean id="cashProperties" class="com.dfire.qa.meal.props.CashProperties">
+        
+        <property name="env" value="${currentEnv}"/>
+        
+        <!-- 收银基本参数 -->
+        <property name="dailyCashBasePara" >
+        		  <map> 		  		       		  		
+        		  		<entry  key="s_osv"  value="${s_osvDaily}"/>
+        		  		<entry  key="s_br"  value="${s_brDaily}"/>
+        		  		<entry  key="s_apv"  value="${s_apvDaily}"/>
+        		  		
+        		  		<entry  key="s_eid"  value="${s_eidDaily}"/>
+        		  		<entry  key="s_did"  value="${s_didDaily}"/>
+        		  		<entry  key="s_os"  value="${s_osDaily}"/>
+        		  		
+        		  		<entry  key="s_net"  value="${s_netDaily}"/>
+        		  		<entry  key="s_sc"  value="${s_scDaily}"/>
+        		  		<entry  key="app_key"  value="${app_keyDaily}"/>
+        		  		
+        		  		<entry  key="appKey"  value="${appKeyDaily}"/>
+        		  		<entry  key="format"  value="${formatDaily}"/>   		  		
+        		  </map>
+        </property>
+        
+        <property name="devCashBasePara" >
+        		  <map> 		  		       		  		
+        		  		<entry  key="s_osv"  value="${s_osvDev}"/>
+        		  		<entry  key="s_br"  value="${s_brDev}"/>
+        		  		<entry  key="s_apv"  value="${s_apvDev}"/>
+        		  		
+        		  		<entry  key="s_eid"  value="${s_eidDev}"/>
+        		  		<entry  key="s_did"  value="${s_didDev}"/>
+        		  		<entry  key="s_os"  value="${s_osDev}"/>
+        		  		
+        		  		<entry  key="s_net"  value="${s_netDev}"/>
+        		  		<entry  key="s_sc"  value="${s_scDev}"/>
+        		  		<entry  key="app_key"  value="${app_keyDev}"/>
+        		  		
+        		  		<entry  key="appKey"  value="${appKeyDev}"/>
+        		  		<entry  key="format"  value="${formatDev}"/>   		  		
+        		  </map>
+        </property>
+        
+        <property name="preCashBasePara" >
+        		  <map> 		  		       		  		
+        		  		<entry  key="s_osv"  value="${s_osvPre}"/>
+        		  		<entry  key="s_br"  value="${s_brPre}"/>
+        		  		<entry  key="s_apv"  value="${s_apvPre}"/>
+        		  		
+        		  		<entry  key="s_eid"  value="${s_eidPre}"/>
+        		  		<entry  key="s_did"  value="${s_didPre}"/>
+        		  		<entry  key="s_os"  value="${s_osPre}"/>
+        		  		
+        		  		<entry  key="s_net"  value="${s_netPre}"/>
+        		  		<entry  key="s_sc"  value="${s_scPre}"/>
+        		  		<entry  key="app_key"  value="${app_keyPre}"/>
+        		  		
+        		  		<entry  key="appKey"  value="${appKeyPre}"/>
+        		  		<entry  key="format"  value="${formatPre}"/>   		  		
+        		  </map>
+        </property>
+        
+        <property name="publishCashBasePara" >
+        		  <map>      		  		       		  		    		  		
+        		  		<entry  key="s_osv"  value="${s_osvPublish}"/>
+        		  		<entry  key="s_br"  value="${s_brPublish}"/>
+        		  		<entry  key="s_apv"  value="${s_apvPublish}"/>
+        		  		
+        		  		<entry  key="s_eid"  value="${s_eidPublish}"/>
+        		  		<entry  key="s_did"  value="${s_didPublish}"/>
+        		  		<entry  key="s_os"  value="${s_osPublish}"/>
+        		  		
+        		  		<entry  key="s_net"  value="${s_netPublish}"/>
+        		  		<entry  key="s_sc"  value="${s_scPublish}"/>
+        		  		<entry  key="app_key"  value="${app_keyPublish}"/>
+        		  		
+        		  		<entry  key="appKey"  value="${appKeyPublish}"/>
+        		  		<entry  key="format"  value="${formatPublish}"/>      		  		      		  		
+        		  </map>
+        </property>
+        
+        
+        
+        <!-- 用户及店铺基本参数 -->
+        <property name="dailyClientBasePara" >
+        		  <map>
+        		  		<entry  key="user_name"  value="${user_nameDaily}"/>       		  		
+        		  		<entry  key="client_type"  value="${client_typeDaily}"/>
+        		  		<entry  key="uniq_no"  value="${uniq_noDaily}"/>
+        		  		
+        		  		<entry  key="brand"  value="${brandDaily}"/>
+        		  		<entry  key="mac"  value="${macDaily}"/>
+        		  		<entry  key="entity_id"  value="${s_eidDaily}"/>
+        		  		
+        		  		<entry  key="password"  value="${passwordDaily}"/>
+        		  		<entry  key="flag"  value="false"/>
+        		  </map>
+        </property>
+        
+        <property name="devClientBasePara" >
+        		  <map>
+        		  		<entry  key="user_name"  value="${user_nameDev}"/>       		  		
+        		  		<entry  key="client_type"  value="${client_typeDev}"/>
+        		  		<entry  key="uniq_no"  value="${uniq_noDev}"/>
+        		  		
+        		  		<entry  key="brand"  value="${brandDev}"/>
+        		  		<entry  key="mac"  value="${macDev}"/>
+        		  		<entry  key="entity_id"  value="${s_eidDev}"/>
+        		  		
+        		  		<entry  key="password"  value="${passwordDev}"/>
+        		  		<entry  key="flag"  value="false"/>
+        		  </map>
+        </property>
+        
+        <property name="preClientBasePara" >
+        		  <map>
+        		  		<entry  key="user_name"  value="${user_namePre}"/>       		  		
+        		  		<entry  key="client_type"  value="${client_typePre}"/>
+        		  		<entry  key="uniq_no"  value="${uniq_noPre}"/>
+        		  		
+        		  		<entry  key="brand"  value="${brandPre}"/>
+        		  		<entry  key="mac"  value="${macPre}"/>
+        		  		<entry  key="entity_id"  value="${s_eidPre}"/>
+        		  		
+        		  		<entry  key="password"  value="${passwordPre}"/>
+        		  		<entry  key="flag"  value="false"/>
+        		  </map>
+        </property>
+        
+        <property name="publishClientBasePara" >
+        		  <map>
+        		  		<entry  key="user_name"  value="${user_namePublish}"/>       		  		
+        		  		<entry  key="client_type"  value="${client_typePublish}"/>
+        		  		<entry  key="uniq_no"  value="${uniq_noPublish}"/>
+        		  		
+        		  		<entry  key="brand"  value="${brandPublish}"/>
+        		  		<entry  key="mac"  value="${macPublish}"/>
+        		  		<entry  key="entity_id"  value="${s_eidPublish}"/>
+        		  		
+        		  		<entry  key="password"  value="${passwordPublish}"/>
+        		  		<entry  key="flag"  value="false"/>
+        		  </map>
+        </property>
+        
+        
+        
+        <!-- 其他参数 -->
+        <property name="dailyOtherBasePara" >
+        		  <map>
+        		  		<entry  key="appSecret"  value="${appSecretDaily}"/>
+        		  		<entry  key="heart.appkey"  value="${heart.appkeyDaily}"/>
+        		  		<entry  key="heart.appsecret"  value="${heart.appsecretDaily}"/>
+        		  		<entry  key="macIp"  value="${macIpDaily}"/>
+        		  </map>
+        </property>
+        
+        <property name="devOtherBasePara" >
+        		  <map>
+        		  		<entry  key="appSecret"  value="${appSecretDev}"/>
+        		  		<entry  key="heart.appkey"  value="${heart.appkeyDev}"/>
+        		  		<entry  key="heart.appsecret"  value="${heart.appsecretDev}"/>
+        		  		<entry  key="macIp"  value="${macIpDev}"/>
+        		  </map>
+        </property>
+        
+         <property name="preOtherBasePara" >
+        		  <map>
+        		  		<entry  key="appSecret"  value="${appSecretPre}"/>
+        		  		<entry  key="heart.appkey"  value="${heart.appkeyPre}"/>
+        		  		<entry  key="heart.appsecret"  value="${heart.appsecretPre}"/>
+        		  		<entry  key="macIp"  value="${macIpPre}"/>
+        		  </map>
+        </property>
+        
+        <property name="publishOtherBasePara" >
+        		  <map>
+        		  		<entry  key="appSecret"  value="${appSecretPublish}"/>
+        		  		<entry  key="heart.appkey"  value="${heart.appkeyPublish}"/>
+        		  		<entry  key="heart.appsecret"  value="${heart.appsecretPublish}"/>
+        		  		<entry  key="macIp"  value="${macIpPublish}"/>
+        		  </map>
+        </property>
+        
+    </bean>
+    
+</beans>

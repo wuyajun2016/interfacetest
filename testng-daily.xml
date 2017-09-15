@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" verbose="1">
+	
+	<test name="module">
+	    <groups>
+    		<run>
+             <include name="smoke" />
+    		</run>
+ 	    </groups> 	    
+		<classes>
+<!-- 			<class name="com.dfire.qa.meal.api.QRCodeTestController"/>	 -->
+<!-- 			<class name="com.dfire.qa.meal.api.MenuTestController"/> -->
+<!-- 			<class name="com.dfire.qa.meal.api.CartTestController" />	 -->
+<!-- 			<class name="com.dfire.qa.meal.api.PayTestController" /> -->
+<!-- 			<class name="com.dfire.qa.meal.api.BossTestController" />	 -->
+<!--			<class name="com.dfire.qa.meal.api.PageSplitTestController" />	-->
+			<!-- <class name="com.dfire.testcase.qjc.membersave.qjc_CardReChargeTest" />
+           <class name="com.dfire.testcase.qjc.membersave.qjc_CardOperTest" />
+           <class name="com.dfire.testcase.qjc.membersave.qjc_CardCosumeTest" />
+                <class name="com.dfire.testcase.qjc.membersave.qjc_CardRedTest" />
+                <class name="com.dfire.testcase.qjc.membersave.qjc_CreateCardTest" /> -->
+               <!-- <class name="com.dfire.testcase.appchange.SearchShopTest" /> -->
+               <class name="com.dfire.testcase.appchange.HotSearchTest" />
+               <class name="com.dfire.testcase.appchange.SearchShopBannerTest" />
+               <class name="com.dfire.testcase.appchange.SearchConditionTest" />
+               <class name="com.dfire.testcase.appchange.TimeLineTest" />
+               <class name="com.dfire.testcase.appchange.FoodDairyTest" />
+               <class name="com.dfire.testcase.appchange.FireMemberTest" />
+                               
+		</classes>
+	</test> 
+	
+<!-- 	<test name="integration"> -->
+<!-- 	    <groups> -->
+<!--     		<run> -->
+<!--              <include name="all" /> -->
+<!--     		</run> -->
+<!--  	    </groups> 	     -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dfire.qa.meal.api.PayTestController" />					 -->
+<!-- 		</classes> -->
+<!-- 	</test>  -->
+	
+
+	
+	
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="org.testng.reporters.FailedReporter" />
+	</listeners>
+	
+</suite>

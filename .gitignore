@@ -1,0 +1,8 @@
+logs/
+target/
+test-output/
+.project
+.classpath
+.settings/
+log.dir_IS_UNDEFINED/
+/bin/

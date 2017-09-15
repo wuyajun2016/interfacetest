@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<dubbo:application name="consumer-of-weixin" />
+
+	
+	 <!-- 连接注册中心配置 -->
+    <dubbo:registry address="${dubbo.registry.address}" protocol="zookeeper"/>
+
+    <dubbo:protocol id="dubbo" name="${dubbo.protocol.name}" port="${dubbo.provider.port}" threads="200"/>
+
+    <dubbo:monitor protocol="registry"/>
+
+	<dubbo:consumer timeout="100000" check="false" />
+<!--     <dubbo:consumer check="false" timeout="5000" filter="executelimit"/> -->
+
+    <!-- 设置服务端超时时间10秒，不允许重试 -->
+    <dubbo:provider timeout="10000" retries="0" delay="-1" loadbalance="leastactive"/>
+	
+	
+	<dubbo:reference id="cardServiceForBusiness" interface="com.dfire.soa.wechat.service.ICardServiceForBusiness"
+                     version="${wechat.dubbo.version}" timeout="2000"/>
+                     
+     <dubbo:reference id="customerRegisterCardService" interface="com.dfire.soa.shopmember.service.ICustomerRegisterCardService"
+                     version="${shopmember.dubbo.version}"/>
+                     
+     <dubbo:reference id="consumerPrivilegeService" interface="com.dfire.soa.consumer.service.IConsumerPrivilegeService"
+                     version="${consumer.dubbo.version}"/>
+                     
+     <dubbo:reference id="privilegeService" interface="com.dfire.soa.consumer.service.IPrivilegeService"
+                     version="${consumer.dubbo.version}"/>
+                     
+     
+     <dubbo:reference id="consumerMenuService" interface="com.dfire.soa.consumer.service.IMenuService"
+                     version="${consumer.dubbo.version}"/>
+                     
+     <dubbo:reference id="orderServiceSoaImpl" interface="com.dfire.soa.consumer.service.order.IOrderService"
+                     version="${consumer.dubbo.version}"/>
+                     
+                     
+     <dubbo:reference id="shopConfigService" interface="com.dfire.soa.consumer.service.IShopConfigService"
+                     version="${consumer.dubbo.version}"/>
+                     
+                     
+     <dubbo:reference id="queueService" interface="com.dfire.soa.consumer.service.IQueueService"
+                     version="${consumer.dubbo.version}" />
+                     
+                     
+     <dubbo:reference id="intergralMallService" interface="com.dfire.soa.consumer.integral.IIntergralMallService"
+                     version="${consumer.dubbo.version}" />
+                     
+                     
+     <dubbo:reference id="promotionClientService" interface="com.dfire.mc.promotion.service.IPromotionClientService"  
+     				 version="${mc.dubbo.version}" />
+     	
+     				 
+     <dubbo:reference id="orderTestService" interface="com.dfire.soa.order.test.ITestOrderService"  
+     				 version="${order.soa.version}" />
+     				 
+      <dubbo:reference id="getOrderService" interface="com.dfire.soa.order.service.IGetOrderService"  
+     				 version="${order.soa.version}" />
+
+</beans>
