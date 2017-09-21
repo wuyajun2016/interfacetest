@@ -9,25 +9,7 @@
     		</run>
  	    </groups> 	    
 		<classes>
-<!-- 			<class name="com.dfire.qa.meal.api.QRCodeTestController"/>	 -->
-<!-- 			<class name="com.dfire.qa.meal.api.MenuTestController"/> -->
-<!-- 			<class name="com.dfire.qa.meal.api.CartTestController" />	 -->
-<!-- 			<class name="com.dfire.qa.meal.api.PayTestController" /> -->
-<!-- 			<class name="com.dfire.qa.meal.api.BossTestController" />	 -->
-<!--			<class name="com.dfire.qa.meal.api.PageSplitTestController" />	-->
-			<!-- <class name="com.dfire.testcase.qjc.membersave.qjc_CardReChargeTest" />
-           <class name="com.dfire.testcase.qjc.membersave.qjc_CardOperTest" />
-           <class name="com.dfire.testcase.qjc.membersave.qjc_CardCosumeTest" />
-                <class name="com.dfire.testcase.qjc.membersave.qjc_CardRedTest" />
-                <class name="com.dfire.testcase.qjc.membersave.qjc_CreateCardTest" /> -->
-               <!-- <class name="com.dfire.testcase.appchange.SearchShopTest" /> -->
                <class name="com.dfire.testcase.appchange.HotSearchTest" />
-               <class name="com.dfire.testcase.appchange.SearchShopBannerTest" />
-               <class name="com.dfire.testcase.appchange.SearchConditionTest" />
-               <class name="com.dfire.testcase.appchange.TimeLineTest" />
-               <class name="com.dfire.testcase.appchange.FoodDairyTest" />
-               <class name="com.dfire.testcase.appchange.FireMemberTest" />
-                               
 		</classes>
 	</test> 
 	
